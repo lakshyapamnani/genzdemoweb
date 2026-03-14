@@ -5,8 +5,15 @@ import { Navbar } from "@/components/Navbar";
 import { Cart } from "@/components/Cart";
 import ProductForm from "./ProductForm";
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = PRODUCTS.find((p) => p.id === params.id);
+export function generateStaticParams() {
+  return PRODUCTS.map((product) => ({
+    id: product.id,
+  }));
+}
+
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const product = PRODUCTS.find((p) => p.id === id);
 
   if (!product) {
     notFound();

@@ -109,7 +109,7 @@ export default function Home() {
 
         {/* Reassembly 85-100% */}
         <TextSection scrollYProgress={scrollYProgress} start={0.85} end={1}>
-           {/* Empty to allow clear view of reassembled product before scrolling to shop */}
+           <div className="opacity-0">Empty Spacer</div>
         </TextSection>
       
       </div>

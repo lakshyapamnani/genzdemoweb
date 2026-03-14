@@ -5,44 +5,10 @@ import { motion } from "framer-motion";
 import { Plus, Check, Star, ShoppingBag, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/context/CartContext";
+import { PRODUCTS } from "@/data/products";
+import Link from "next/link";
 
 const SIZES = ["S", "M", "L", "XL", "XXL"];
-
-// Mock products data
-const PRODUCTS = [
-    {
-      id: "zenvy-oversized-tee-001",
-      name: "ZENVY STUDIO OVERSIZED TEE",
-      price: 85,
-      description: "Engineered for the modern silhoutte. Features dropped shoulders, heavyweight 280gsm cotton, and high-density puffed print graphics.",
-      image: "/frames/ezgif-frame-001.jpg",
-      badge: "Best Seller"
-    },
-    {
-      id: "zenvy-essentials-hoodie-002",
-      name: "ESSENTIALS HEAVY HOODIE",
-      price: 120,
-      description: "Ultra-heavyweight 450gsm french terry cotton. Double-lined hood and kangaroo pocket.",
-      image: "/frames/ezgif-frame-010.jpg",
-      badge: "New Arrival"
-    },
-    {
-      id: "zenvy-technical-cargo-003",
-      name: "TECHNICAL CARGO V2",
-      price: 150,
-      description: "Water-resistant nylon blend with articulated knees and magnetic closure pockets.",
-      image: "/frames/ezgif-frame-020.jpg", 
-      badge: "Limited"
-    },
-    {
-      id: "zenvy-signature-cap-004",
-      name: "SIGNATURE WARP CAP",
-      price: 45,
-      description: "Structured 6-panel cap with 3D embroidery and adjustable metal buckle.",
-      image: "/frames/ezgif-frame-030.jpg",
-      badge: null
-    }
-];
 
 export function ProductSection() {
     // State to track size/adding PER product

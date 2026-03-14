@@ -1,0 +1,34 @@
+export const PRODUCTS = [
+    {
+      id: "zenvy-oversized-tee-001",
+      name: "ZENVY STUDIO OVERSIZED TEE",
+      price: 85,
+      description: "Engineered for the modern silhoutte. Features dropped shoulders, heavyweight 280gsm cotton, and high-density puffed print graphics. Pre-shrunk and garment dyed for a vintage hand-feel.",
+      image: "/frames/ezgif-frame-001.jpg",
+      badge: "Best Seller"
+    },
+    {
+      id: "zenvy-essentials-hoodie-002",
+      name: "ESSENTIALS HEAVY HOODIE",
+      price: 120,
+      description: "Ultra-heavyweight 450gsm french terry cotton. Double-lined hood and kangaroo pocket. Features a slightly cropped, boxy fit perfect for layering.",
+      image: "/frames/ezgif-frame-010.jpg",
+      badge: "New Arrival"
+    },
+    {
+      id: "zenvy-technical-cargo-003",
+      name: "TECHNICAL CARGO V2",
+      price: 150,
+      description: "Water-resistant nylon blend with articulated knees and magnetic closure pockets. Adjustable bungee cords at the hem for a customizable silhouette.",
+      image: "/frames/ezgif-frame-020.jpg", 
+      badge: "Limited"
+    },
+    {
+      id: "zenvy-signature-cap-004",
+      name: "SIGNATURE WARP CAP",
+      price: 45,
+      description: "Structured 6-panel cap with 3D embroidery and adjustable metal buckle. Made from durable cotton twill.",
+      image: "/frames/ezgif-frame-030.jpg",
+      badge: null
+    }
+];

@@ -25,10 +25,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       <Cart />
 
       <div className="container mx-auto px-6 py-12 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           
           {/* Images Section */}
-          <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full bg-[#0A0A0C] border border-white/5 rounded-2xl overflow-hidden sticky top-32">
+          <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full bg-[#0A0A0C] border border-white/5 rounded-2xl overflow-hidden lg:sticky lg:top-32">
             <Image
               src={product.image}
               alt={product.name}

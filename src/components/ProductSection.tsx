@@ -72,7 +72,7 @@ export function ProductSection() {
                             className="group flex flex-col space-y-3"
                         >
                             {/* Image Container */}
-                            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#0A0A0C] border border-white/5">
+                            <Link href={`/product/${product.id}`} className="block relative aspect-[4/5] overflow-hidden rounded-xl bg-[#0A0A0C] border border-white/5 cursor-pointer">
                                 <img 
                                     src={product.image} 
                                     alt={product.name} 
@@ -80,31 +80,35 @@ export function ProductSection() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                                {/* Quick Add Button (Desktop Hover) */}
-                                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                {/* Add to Cart Button (Desktop Hover) */}
+                                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-10">
                                     <button 
-                                        onClick={() => handleAddToCart(product)}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            handleAddToCart(product);
+                                        }}
                                         className="w-full py-3 bg-white text-black font-bold text-sm uppercase tracking-wider rounded-full hover:bg-white/90 flex items-center justify-center gap-2 shadow-lg"
                                     >
                                         {addedStatus[product.id] ? <Check className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
-                                        {addedStatus[product.id] ? "Added" : "Quick Add"}
+                                        {addedStatus[product.id] ? "Added" : "Add to Cart"}
                                     </button>
                                 </div>
                                 
                                 {/* Badge */}
                                 {product.badge && (
-                                    <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full">
+                                    <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full z-10">
                                         <span className="text-[10px] font-bold uppercase tracking-widest text-white">
                                             {product.badge}
                                         </span>
                                     </div>
                                 )}
-                            </div>
+                            </Link>
 
                             {/* Product Info */}
-                            <div className="space-y-1">
+                            <Link href={`/product/${product.id}`} className="space-y-1 block cursor-pointer group-hover:text-[#0050FF] transition-colors">
                                 <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-1">
-                                    <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-tight leading-snug group-hover:text-[#0050FF] transition-colors truncate w-full">
+                                    <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-tight leading-snug truncate w-full">
                                         {product.name}
                                     </h3>
                                     <span className="text-sm font-medium text-white/60">${product.price}</span>
@@ -112,7 +116,7 @@ export function ProductSection() {
                                 <p className="text-xs text-white/40 line-clamp-1">
                                     {product.description}
                                 </p>
-                            </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

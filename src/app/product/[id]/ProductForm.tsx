@@ -9,7 +9,7 @@ const SIZES = ["S", "M", "L", "XL", "XXL"];
 export default function ProductForm({ product }: { product: any }) {
   const [selectedSize, setSelectedSize] = useState<string>("M");
   const [isAdding, setIsAdding] = useState(false);
-  const { addItem, toggleCart } = useCart();
+  const { addItem, openCart } = useCart();
 
   const handleAddToCart = () => {
     setIsAdding(true);
@@ -23,7 +23,7 @@ export default function ProductForm({ product }: { product: any }) {
 
     setTimeout(() => {
       setIsAdding(false);
-      toggleCart(); // Open cart to show added item
+      openCart(); // Open cart to show added item
     }, 500);
   };
 

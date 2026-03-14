@@ -63,7 +63,7 @@ export function Cart() {
                     <div className="flex-1">
                       <div className="flex justify-between items-start mb-1">
                         <h3 className="font-bold text-white text-lg">{item.name}</h3>
-                        <p className="text-white/80 font-mono">${item.price}</p>
+                        <p className="text-white/80 font-mono">₹{item.price}</p>
                       </div>
                       <p className="text-sm text-white/40 mb-3">Size: {item.size}</p>
                       <div className="flex items-center justify-between">
@@ -109,15 +109,19 @@ export function Cart() {
               <div className="pt-6 border-t border-white/10 space-y-4">
                 <div className="flex items-center justify-between text-white/60 text-sm">
                   <span>Subtotal</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal.toFixed(2)}</span>
                 </div>
                 <div className="flex items-center justify-between text-white font-bold text-xl mb-4">
                   <span>Total</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal.toFixed(2)}</span>
                 </div>
-                <button className="w-full py-4 bg-white text-black font-bold text-lg rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide">
-                  Checkout
-                </button>
+                <Link
+                  href="/checkout"
+                  onClick={closeCart}
+                  className="block w-full py-4 bg-white text-black font-bold text-lg rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center"
+                >
+                  Proceed to Checkout
+                </Link>
                 <p className="text-center text-xs text-white/20">
                   Secure Checkout powered by Stripe
                 </p>

@@ -111,7 +111,7 @@ export function ProductSection() {
                                     <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-tight leading-snug truncate w-full">
                                         {product.name}
                                     </h3>
-                                    <span className="text-sm font-medium text-white/60">${product.price}</span>
+                                    <span className="text-sm font-medium text-white/60">₹{product.price}</span>
                                 </div>
                                 <p className="text-xs text-white/40 line-clamp-1">
                                     {product.description}
